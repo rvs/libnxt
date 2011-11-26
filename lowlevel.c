@@ -93,8 +93,17 @@ nxt_open(nxt_t *nxt)
 {
   char buf[2];
   int ret;
+  char bound_driver_name[20];
 
   nxt->hdl = usb_open(nxt->dev);
+
+//detach possible kernel driver bound to interface
+ if (usb_get_driver_np(nxt->hdl,1,bound_driver_name,sizeof(bound_driver_name))==0)
+   {
+  if (usb_detach_kernel_driver_np(nxt->hdl, 1)<0)
+	fprintf(stderr,"Failed to detach the driver %s (or cdc-acm) bound to the USB interface",bound_driver_name);
+	//Let usb_set_configuration() below return an error and handle it
+   }	
 
   ret = usb_set_configuration(nxt->hdl, 1);
   if (ret < 0)
