@@ -16,7 +16,7 @@ if auto_libs:
 
 BuildEnv.Command('flash_routine.h',
 		 'flash_routine.h.base',
-		 './make_flash_header.py')
+		 'python2 make_flash_header.py')
 
 Default(BuildEnv.Library('nxt',
 			 [x for x in glob('*.c')
