@@ -1,3 +1,24 @@
+Preamble for the readers from the future (year 2020 and beyond)
+
+Before you follow instructions below be aware that all of this
+is now 13++ years old (man, time flies!). I tried to make sure you
+can still build this (and play with your NXT, although I wouldn't
+understand why since you probably have a pet Boston Dynamics Spot®
+to play with). 
+
+Linux is probably your best bet. Included Docker infrastructure makes
+sure you can build fwflash and fwexec as static binaries that would
+hopefully run on your Linux from the future (it is now Microsoft's
+Windows Subsystem for Linux, isn't it?).
+
+Make sure Docker is available and simply run: make. You will find fwflash
+and fwexec in the newly minted out/ folder.
+
+- Roman 'rvs' Shaposhnik
+
+And now we go back to our regularly scheduled programming with David Anderson!
+
+
                   LibNXT and FwFlash
                         v0.3
                     David Anderson
